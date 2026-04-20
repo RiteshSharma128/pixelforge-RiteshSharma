@@ -27,6 +27,30 @@
 
 
 
+// import { defineConfig } from 'vite'
+// import react from '@vitejs/plugin-react'
+
+// export default defineConfig({
+//   plugins: [react()],
+//   server: {
+//     port: 5173,
+//     proxy: {
+//       '/api': {
+//         target: 'http://localhost:8001',
+//         changeOrigin: true,
+//         secure: false,
+//         configure: (proxy) => {
+//           proxy.on('error', (err) => {
+//             console.log('Proxy error:', err.message)
+//           })
+//         }
+//       }
+//     }
+//   }
+// })
+
+
+
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
@@ -38,12 +62,7 @@ export default defineConfig({
       '/api': {
         target: 'http://localhost:8001',
         changeOrigin: true,
-        secure: false,
-        configure: (proxy) => {
-          proxy.on('error', (err) => {
-            console.log('Proxy error:', err.message)
-          })
-        }
+        secure: false
       }
     }
   }
